@@ -26,13 +26,13 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
-  height = prompt("Please enter a number from 1 to 23");
-
-while(1<=height<=23){
- 
-
+  while (true){
+  height = prompt("Please enter an integer between 1 to 23");
+height=Number(height);
+  if (height<=23 && height>=1 && Number.isInteger(height)){
+document.getElementById("mario-easy-output").innerHTML =""
 }
-    document.getElementById("mario-easy-output").innerHTML ="";
+}
   ////////////////////////// DO NOT MODIFY
   check('mario', height); // DO NOT MODIFY
   ////////////////////////// DO NOT MODIFY
