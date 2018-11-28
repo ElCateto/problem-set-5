@@ -116,7 +116,6 @@ function marioAgain() {
   check('mario-again', height); // DO NOT MODIFY
   //////////////////////////////// DO NOT MODIFY
 }
-
 /*
  * Credit. 10 points.
  *
