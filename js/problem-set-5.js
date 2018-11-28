@@ -26,11 +26,28 @@ function mario() {
   let height; // DO NOT MODIFY
   ////////////// DO NOT MODIFY
 
+
+  let hash = '#';
+  let space = '&nbsp;'
+  let lines = '';
   while (true){
   height = prompt("Please enter an integer between 1 to 23");
 height=Number(height);
   if (height<=23 && height>=1 && Number.isInteger(height)){
-document.getElementById("mario-easy-output").innerHTML =""
+ for(let i=0; i<height; i++) {
+
+        for(let j=0; j<=(height-2-i);j++) {
+          lines = lines + space;
+        }
+
+        for(let k=0; k<=(1+i);k++) {
+          lines = lines + hash;
+        }
+
+        lines = lines + "<br>";
+      }
+      document.getElementById("mario-easy-output").innerHTML="<code>"+lines+"</code>";
+      break;
 }
 }
   ////////////////////////// DO NOT MODIFY
