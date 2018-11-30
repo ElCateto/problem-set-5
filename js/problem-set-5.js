@@ -162,8 +162,60 @@ function credit() {
   let card; // DO NOT MODIFY
   //////////// DO NOT MODIFY
 
-  // WRITE YOUR EXERCISE 3 CODE HERE
+  let evennums = 0;
+  let oddnums = 0;
+  let cardnum = 0;
 
+  while (true) {
+    card = prompt("Enter Credit Card");
+    cardnum = Number(card);
+    if (Number.isInteger(Number(card))){
+      //if (card.length == 16 || card.length == 15 || card.length == 13) {
+        //console.log("1length")
+        break;
+      //}
+    }
+  }
+
+  for(let i=card.length - 2; i>=0; i-=2) {
+    let temp = Number(card[i])*2;
+    let tempstr = temp.toString();
+    let tempint = 0;
+    let temparr = [];
+    for(k=0; k < tempstr.length; k++) {
+      tempint = tempint + Number(tempstr[k])
+    }
+    evennums = evennums + tempint;
+    //evennums = evennums + Number(card[i])*2;
+    //console.log("2evan " + evennums + " " + temp + " " + tempint);
+  }
+  for(let j=card.length - 1; j>=0; j-=2) {
+    oddnums = oddnums + Number(card[j]);
+    //console.log("2odd " + oddnums + " " + Number(card[j]));
+  }
+
+  if(((evennums + oddnums)%10 == 0) &&
+    (card.length == 13 || card.length == 16) && (card[0] == 4)) {
+    document.getElementById("credit-output").innerHTML="<img src='./images/visa.png'>";
+    //console.log("visa");
+  }
+  else if(((evennums + oddnums)%10 == 0) && (card.length == 15) &&
+    (card[0] == 3 && (card[1] == 4 || card[1] == 7))) {
+    document.getElementById("credit-output").innerHTML="<img src='./images/amex.png'>";
+    //console.log("amex");
+  }
+  else if(((evennums + oddnums)%10 == 0) && (card.length == 16) &&
+    (card[0] == 5 && (card[1] == 1 || card[1] == 2 || card[1] == 3 || card[1] == 4 || card[1] == 5))) {
+    document.getElementById("credit-output").innerHTML="<img src='./images/mastercard.png'>";
+    //console.log("master");
+  }
+  else {
+    document.getElementById("credit-output").innerHTML="<img src='./images/invalid.png'>";
+    //console.log("inv");
+  }
+
+  card = cardnum;
+  console.log(typeof(card));
   /*
    * NOTE: After reading in the card number and storing it in the 'card'
    *       variable, do not modify it. If you find it necessary to manipulate
@@ -237,6 +289,9 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
+
+
+
 
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
