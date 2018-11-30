@@ -253,8 +253,16 @@ function credit() {
 
 function guess() {
 
-  // WRITE YOUR EXERCISE 4 CODE HERE
+let guess=0;
+let attempt=0;
+let random=Math.floor(Math.Random(9999*)+1);
 
+while(true){
+  guess = prompt("Please enter a windspeed of 0 or higher");
+  guess=Number(guess);
+  if (guess>=0 && Number.isInteger(guess)) {
+}
+}
   ////////////////// DO NOT MODIFY
   check('guess'); // DO NOT MODIFY
   ////////////////// DO NOT MODIFY
@@ -289,10 +297,34 @@ function hurricane() {
   ///////////////// DO NOT MODIFY
   let windspeed; // DO NOT MODIFY
   ///////////////// DO NOT MODIFY
-
-
-
-
+    while(true){
+      windspeed = prompt("Please enter a windspeed of 0 or higher");
+      windspeed=Number(windspeed);
+      if (windspeed>=0 && Number.isInteger(windspeed)) {
+        if (windspeed<=39 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="The skies are calm...";
+        }
+        else if (windspeed<=73 && windspeed>=39 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Tropical storm.";
+        }
+        else if (windspeed<=74 && windspeed>=95 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Category 1 Hurricane.";
+        }
+        else if (windspeed<=96 && windspeed>=110 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Category 2 Hurricane.";
+        }
+        else if (windspeed<=111 && windspeed>=129 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Category 3 Hurricane.";
+        }
+        else if (windspeed<=130 && windspeed>=156 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Category 4 Hurricane.";
+        }
+        if (windspeed>=157 && Number.isInteger(windspeed)){
+            document.getElementById("hurricane-output").innerHTML="Category 5 Hurricane.";
+        }
+        break;
+      }
+    }
   ///////////////////////////////// DO NOT MODIFY
   check('hurricane', windspeed); // DO NOT MODIFY
   ///////////////////////////////// DO NOT MODIFY
